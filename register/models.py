@@ -7,9 +7,9 @@ class Customer(models.Model):
     name = models.CharField(max_length=30, null=False, blank=False)
     surname = models.CharField(max_length=65, null=False, blank=False)
     birth_date = models.DateField(auto_now_add=False, null=False, blank=False)
-    rg = models.CharField(max_length=7, null=False, blank=False)
-    cpf = models.CharField(max_length=11, null=False, blank=False)
-    cnpj = models.CharField(max_length=14, null=True, blank=True)
+    rg = models.CharField(max_length=7, null=False, blank=False, unique=True)
+    cpf = models.CharField(max_length=11, null=False, blank=False, unique=True)
+    cnpj = models.CharField(max_length=14, null=True, blank=True, unique=True)
     mother_name = models.CharField(max_length=95, null=True, blank=True)
     phone = models.CharField(max_length=15, null=False, blank=False)
     country = models.CharField(
